@@ -1,7 +1,7 @@
 # LALE: Lightweight-Transformer Architecture for Land-Cover Estimation
 This repository contains an end-to-end training and evaluation pipeline for LALE, a lightweight segmentation architecture designed for high-performance remote sensing image analysis.
 
-[![Paper](https://img.shields.io/badge/arXiv-2606.02092-b31b1b.svg)]([https://arxiv.org/abs/2606.02092](https://arxiv.org/abs/2606.02092))
+[![Paper](https://img.shields.io/badge/arXiv-2606.02092-b31b1b.svg)](https://arxiv.org/abs/2606.02092)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
