@@ -1,11 +1,22 @@
 # LALE: Lightweight-Transformer Architecture for Land-Cover Estimation
 This repository contains an end-to-end training and evaluation pipeline for LALE, a lightweight segmentation architecture designed for high-performance remote sensing image analysis.
 
-![LALE.png](LALE.png)
+[![Paper](https://img.shields.io/badge/arXiv-2606.02092-b31b1b.svg)]([https://arxiv.org/abs/2606.02092](https://arxiv.org/abs/2606.02092))
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
-**LALE: Lightweight-Transformer Architecture for Land-Cover Estimation** Ümit Mert Çağlar, Alptekin Temizel  
-*arXiv preprint arXiv:2606.02092* (2026) [Paper](https://arxiv.org/abs/2606.02092)  
-*Introduces a lightweight transformer-based architecture specifically designed for efficient and accurate land-cover estimation in remote sensing.*
+## Table of Contents
+- [Abstract](#abstract)
+- [Overview](#overview)
+- [Results](#results)
+- [Installation](#installation)
+- [Training Pipeline](#lale-training-pipeline)
+
+---
+
+<p align="center">
+  <img src="LALE.png" width="700">
+</p>
 
 # Abstract
 
@@ -19,7 +30,7 @@ This repository contains an end-to-end training and evaluation pipeline for **LA
 
 ## Overview
 
-The architecture implements a bifurcated encoder strategy—utilizing **ConvMixer blocks** for high-resolution local features and **Transformer blocks** for global context—to achieve an optimal balance between parameter efficiency and segmentation accuracy.
+The architecture implements a bifurcated encoder strategy, utilizing **ConvMixer blocks** for high-resolution local features and **Transformer blocks** for global context, to achieve an optimal balance between parameter efficiency and segmentation accuracy.
 
 ### Key Features
 
@@ -31,7 +42,7 @@ The architecture implements a bifurcated encoder strategy—utilizing **ConvMixe
 
 ---
 
-## Installation & Requirements
+## Installation
 
 The pipeline relies on `torch`, `torchvision`, `albumentations`, `segmentation-models-pytorch`, and `wandb`.
 
