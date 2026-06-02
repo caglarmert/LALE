@@ -1,11 +1,19 @@
-# LALE
+# LALE: Lightweight-Transformer Architecture for Land-Cover Estimation
 This repository contains an end-to-end training and evaluation pipeline for LALE, a lightweight segmentation architecture designed for high-performance remote sensing image analysis.
 
 ![LALE.png](LALE.png)
 
-# NanoRSFormer Training Pipeline
+**LALE: Lightweight-Transformer Architecture for Land-Cover Estimation** Ümit Mert Çağlar, Alptekin Temizel  
+*arXiv preprint arXiv:2606.02092* (2026) [Paper](https://arxiv.org/abs/2606.02092)  
+*Introduces a lightweight transformer-based architecture specifically designed for efficient and accurate land-cover estimation in remote sensing.*
 
-This repository contains an end-to-end training and evaluation pipeline for **NanoRSFormer**, a lightweight segmentation architecture designed for high-performance remote sensing image analysis.
+# Abstract
+
+Semantic segmentation of remote sensing imagery requires models that capture both global context and local detail under tight computational budgets. Prior work typically optimizes for one of these axes: attention for global context, convolution for local detail, or compactness for efficiency. While hybrid approaches aim to capture both, they require architectural changes and encoder backbones with computational overhead, limiting efficiency and performance. We present LALE (Lightweight-transformer Architecture for Land-cover Estimation), an end-to-end remote sensing image segmentation architecture, that bifurcates its encoder by resolution: lightweight ConvMixer stages handle high-resolution local features, while transformer stages handle low-resolution global context, confining the quadratic cost of self-attention to deep, downsampled feature maps. An all-MLP multi-scale decoder, together with RMSNorm and StarReLU throughout, further reduces compute and parameter count. On the large-scale ARAS400k remote-sensing segmentation benchmark, LALE establishes a strong efficiency-performance trade-off against CNN, transformer, and hybrid baselines. Our smallest variant, (just 1.6M parameters), reaches within 2.6 F1 points of the best baseline (UPerNet) while using 4.5x fewer parameters, 7x less storage, 17x fewer GMACs, and delivering 1.8x higher throughput.
+
+# LALE Training Pipeline
+
+This repository contains an end-to-end training and evaluation pipeline for **LALE**, a lightweight segmentation architecture designed for high-performance remote sensing image analysis.
 
 ---
 
@@ -77,7 +85,7 @@ Training hyperparameters are defined in `config_dict`. You can modify these sett
 
 Our comprehensive model benchmarking, architecture search, and ablation studies on the ARAS400k and LiTS datasets, totaling over 200 individual experiments, were successfully completed in under 400 GPU-hours (NVIDIA H100), demonstrating highly efficient training. Training a LALE model requires an average of just 2.5 hours, while inference takes only 11 minutes for 100,240 remote sensing images. This covers an area of 657,000 km square,
 
-### Comprehensive performance and efficiency comparison of segmentation architectures (Performance values in %)
+### Comprehensive performance and efficiency comparison of segmentation architectures (%)
 
 | Architecture | F1 | Accuracy | Precision | Recall | IoU | Size (MB) | Params (M) | GMACs |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -100,4 +108,13 @@ Our comprehensive model benchmarking, architecture search, and ablation studies 
 | FastViT-SA12 | 74.71 | 83.36 | 74.29 | 75.32 | 62.32 | 111.71 | 29.2 | 23.40 |
 | FastViT-MCI0 | 75.53 | 83.96 | 74.53 | 76.96 | 63.33 | 111.11 | 29.1 | 23.75 |
 
+### Cite
 
+```bibtex
+@article{ccauglar2026lale,
+  title={LALE: Lightweight-Transformer Architecture for Land-Cover Estimation}, 
+  author={{\c{C}}a{\u{g}}lar, {\"U}mit Mert and Temizel, Alptekin},
+  journal={arXiv preprint arXiv:2606.02092},
+  year={2026},
+}
+```
