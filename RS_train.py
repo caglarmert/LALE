@@ -89,7 +89,7 @@ class MLPDecoder(nn.Module):
         outs = [F.interpolate(self.linear_c[i](feat), size=target_size, mode='bilinear', align_corners=False) if i > 0 else self.linear_c[i](feat) for i, feat in enumerate(features)]
         return self.classifier(self.dropout(self.linear_fuse(torch.cat(outs, dim=1))))
 
-class NanoRSFormer(nn.Module):
+class LALE(nn.Module):
     def __init__(self, in_chans=3, num_classes=1, dims=[32, 64, 128, 256], depths=[1,1,1,1], num_heads=4):
         super().__init__()
         self.stem = nn.Sequential(nn.Conv2d(in_chans, dims[0] // 2, kernel_size=3, stride=2, padding=1), RMSNorm(dims[0] // 2), StarReLU(), nn.Conv2d(dims[0] // 2, dims[0], kernel_size=3, stride=2, padding=1), RMSNorm(dims[0]))
@@ -428,7 +428,7 @@ def main():
     )
 
     # Initializing custom architecture instead of smp library
-    model = NanoRSFormer(
+    model = LALE(
         in_chans=3, 
         num_classes=config_dict["NUM_CLASSES"]
     ).to(device)
